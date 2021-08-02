@@ -64,7 +64,6 @@ model=Model(inputs=(image_shape,eeg_shape),outputs=output)
 model.compile(optimizer="adam",loss='categorical_crossentropy',metrics=['CategoricalAccuracy'])
 model.summary()
 results=model.fit([imx_train,x_train],[imy_train,y_train],batch_size=64,epochs=30,validation_data=([imx_val,x_val],[imy_val,y_val]))
-model.save("model_fusion.h5")
 
 plt.plot(results.history['categorical_accuracy'],label="accuracy")
 plt.plot(results.history['val_categorical_accuracy'],label="val_accuracy")
