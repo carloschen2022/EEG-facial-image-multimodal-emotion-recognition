@@ -28,7 +28,7 @@ l=np.hstack((l1,l2,l3))
 imy=to_categorical(l)
 
 #load model
-model_fusion=load_model("prtrained model/model_fusion.h5")
+model_fusion=load_model("model_fusion.h5")
 
 #model test
 test_accuracy=model_fusion.evaluate([imx,x],[imy,y])
