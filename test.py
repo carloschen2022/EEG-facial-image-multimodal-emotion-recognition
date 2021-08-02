@@ -7,7 +7,7 @@ from tensorflow.keras.utils import to_categorical
 from keras.models import load_model
 
 #Read the EEG test set
-naodian = sio.loadmat("test data/EEG data.mat")
+naodian = sio.loadmat("EEG data.mat")
 x= naodian['naodian'].reshape(3840,32,1)
 
 #0 represents sadness,1 represents calmness, and 2 represents happyness
@@ -18,7 +18,7 @@ y=np.hstack((l1,l2,l3))
 y = to_categorical(y)
 
 #Read facial image test set
-imx=np.load('test data/Facial image data.npy')
+imx=np.load('Facial image data.npy')
 imx=imx/255
 
 l1=np.ones(1280,)*2
